@@ -5,7 +5,7 @@ const key = document.querySelectorAll('.key');
 
 
 
-const keys = [];
+
 
     
 

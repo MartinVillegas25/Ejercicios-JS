@@ -12,7 +12,7 @@
       <div class="clock-face">
         <div class="hand hour-hand"></div>
         <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
+        <div style="background-color: red; height: 2px;" class="hand second-hand"></div>
       </div>
     </div>
 
@@ -72,28 +72,33 @@
 
   <script>
 
-    const date = new Date;
-    let horaReal =date.getHours();
-    let minReal = date.getMinutes();
-    let secReal = date.getSeconds();
+    
+    
+    
 
-    const lapso = 6;
+   
+
 
     const hora = document.querySelector('.hour-hand');
     const minuto = document.querySelector('.min-hand');
     const segundo = document.querySelector('.second-hand');
 
-    console.log(segundo)
     
-
+    setInterval(() => {
+        const date = new Date();
+        let h=date.getHours();
+        let min = date.getMinutes();
+        let sec = date.getSeconds();
+        hora.style.transform = `rotate(${360*h/12 + 90}deg)`;
+        minuto.style.transform = `rotate(${360*min/60 + 90}deg)`;
+        segundo.style.transform=`rotate(${360*sec/60 +90}deg)`;
+        
+      }, 1000);
+    
+    
+    
       
-      const segundero = ()=>{
-          setInterval(() => {
-            segundo.setAttribute("background-color", "red");
-        }, 100 );
-      }
-    
-      segundero();
+
 
     
 
